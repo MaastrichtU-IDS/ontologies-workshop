@@ -85,13 +85,13 @@ public class PatientDataGenerator {
 		category = scanner.nextLine();*/
 //		System.out.println(qq);
 		
-		File folder = new File("resources/Practical2/Task2");
+		File folder = new File("resources/data");
 		File[] listOfFiles = folder.listFiles();
 		List<List<String>> totalTags = new ArrayList<List<String>>();
 		for (int i = 0; i < listOfFiles.length; i++) {
 			if (listOfFiles[i].isFile()) {
 				List<String> currentTags = new ArrayList<String>();
-				File input = new File("resources/Practical2/Task2/"+listOfFiles[i].getName());
+				File input = new File("resources/data/"+listOfFiles[i].getName());
 				Document doc = Jsoup.parse(input, "UTF-8");
 				Elements dataTags = doc.getElementsByTag("data");
 				for (Element dataTag : dataTags) {

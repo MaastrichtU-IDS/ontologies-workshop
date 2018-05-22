@@ -99,7 +99,7 @@ public class MedicalExpertClassificationResultsFrame{
 
 	private boolean isATypeOf(File f, OWLClass selectedDiseaseCategory) {
 		List<String> fileOntologyTags = new ArrayList<String>();
-		File input = new File("resources/Practical2/Task2/"+f.getName());
+		File input = new File("resources/data/"+f.getName());
 		Document doc;
 		try {
 			doc = Jsoup.parse(input, "UTF-8");
@@ -130,7 +130,7 @@ public class MedicalExpertClassificationResultsFrame{
 
 	private void getDiseasesNotUnderCategory(OWLClass selectedDiseaseCategory) {
 		diseaseLinksListModel.clear();
-		File folder = new File("resources/Practical2/Task2");
+		File folder = new File("resources/data");
 		File[] listOfFiles = folder.listFiles();
 		try {
 			if (listOfFiles.length > 0) {
@@ -150,19 +150,19 @@ public class MedicalExpertClassificationResultsFrame{
 			JOptionPane.showMessageDialog(frame, "Could not find directory with disease files.");
 		}
 		
-		System.out.println(diseaseLinksListModel.getSize());
+		//System.out.println(diseaseLinksListModel.getSize());
 		if (diseaseLinksListModel.isEmpty())
 			JOptionPane.showMessageDialog(frame, "Could not find any diseases in this category.");			
 	}
 
 	private String getAnnotations(File f) {
-		System.out.println(f.getName());
+		//System.out.println(f.getName());
 		String result = "[ ";
 		// First get class
 		if (f.isFile()) {
 			OWLClass className;
 			List<String> currentTags = new ArrayList<String>();
-			File input = new File("resources/Practical2/Task2/"+f.getName());
+			File input = new File("resources/data/"+f.getName());
 			Document doc;
 			try {
 				doc = Jsoup.parse(input, "UTF-8");
@@ -261,7 +261,7 @@ public class MedicalExpertClassificationResultsFrame{
 		});
 
 		diseaseLinksList.setCellRenderer(new MyDiseaseResultCellRenderer());
-		File folder = new File("resources/Practical2/Task2");
+		File folder = new File("resources/data");
 		File[] listOfFiles = folder.listFiles();
 		try {
 			if (listOfFiles.length > 0) {
@@ -330,7 +330,7 @@ public class MedicalExpertClassificationResultsFrame{
 		Set<OWLClass> result = new HashSet<OWLClass>();
 		Reasoner reasoner = new Reasoner(new Configuration(), ontology);
 
-		System.out.println(diseaseClass.getIRI());
+		//System.out.println(diseaseClass.getIRI());
 
 		Set<OWLClass> direct_subclasses_of_disease = reasoner.getSubClasses(diseaseClass, true).getFlattened();
 		result.addAll(direct_subclasses_of_disease);

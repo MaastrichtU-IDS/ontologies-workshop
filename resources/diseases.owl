@@ -212,12 +212,6 @@
 
     <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/diseases/diseases.owl#AlzheimersDisease">
         <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/diseases/diseases.owl#Dementia"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/diseases/diseases.owl#originatesIn"/>
-                <owl:someValuesFrom rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/diseases/diseases.owl#Brain"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/diseases/diseases.owl#Schizophrenia"/>
     </owl:Class>
     

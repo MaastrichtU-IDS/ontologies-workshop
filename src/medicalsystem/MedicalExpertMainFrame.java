@@ -96,7 +96,6 @@ public class MedicalExpertMainFrame{
 		praBtn.setFont(new Font("Calibri", Font.BOLD | Font.TRUETYPE_FONT, 24));
 		praBtn.setForeground(Color.WHITE);
 		praBtn.addActionListener(new DiseaseComparisonButtonHandler());
-		//praBtn.setEnabled(false);
 		
 		if (!ontologyLoaded) {
 			dcBtn.setEnabled(false);
