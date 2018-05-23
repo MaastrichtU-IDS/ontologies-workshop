@@ -107,6 +107,18 @@
     
 
 
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#screens -->
+
+    <owl:ObjectProperty rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#screens"/>
+    
+
+
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#serves -->
+
+    <owl:ObjectProperty rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#serves"/>
+    
+
+
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
@@ -184,6 +196,15 @@
 
     <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Authentic">
         <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Descriptor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Beverage -->
+
+    <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Beverage">
+        <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Refreshment"/>
+        <owl:disjointWith rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#FoodItem"/>
     </owl:Class>
     
 
@@ -312,6 +333,14 @@
     
 
 
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#FoodItem -->
+
+    <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#FoodItem">
+        <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Refreshment"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Frightening -->
 
     <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Frightening">
@@ -413,6 +442,24 @@
     
 
 
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#LumiereTheater -->
+
+    <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#LumiereTheater">
+        <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Theater"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#serves"/>
+                        <owl:someValuesFrom rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Popcorn"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
     <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Male -->
 
     <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Male">
@@ -429,10 +476,26 @@
     
 
 
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#PatheTheater -->
+
+    <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#PatheTheater">
+        <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Theater"/>
+    </owl:Class>
+    
+
+
     <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Person -->
 
     <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Person">
         <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Popcorn -->
+
+    <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Popcorn">
+        <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#FoodItem"/>
     </owl:Class>
     
 
@@ -456,6 +519,14 @@
     <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Rating -->
 
     <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Rating">
+        <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Refreshment -->
+
+    <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Refreshment">
         <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Entity"/>
     </owl:Class>
     
@@ -524,6 +595,26 @@
 
     <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Suspense">
         <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Descriptor"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Theater -->
+
+    <owl:Class rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Theater">
+        <rdfs:subClassOf rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Entity"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#screens"/>
+                <owl:someValuesFrom rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Movie"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#serves"/>
+                <owl:someValuesFrom rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#Popcorn"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
     </owl:Class>
     
 
