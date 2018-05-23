@@ -739,6 +739,15 @@
                 </owl:intersectionOf>
             </owl:Class>
         </rdf:type>
+        <serves rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#deadpool2"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#maastricht_lumiere -->
+
+    <owl:NamedIndividual rdf:about="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#maastricht_lumiere">
+        <rdf:type rdf:resource="http://www.maastrichtuniversity.nl/ids/ontologies/movie/movie.owl#LumiereTheater"/>
     </owl:NamedIndividual>
     
 
